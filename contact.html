@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - ShopKaro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar (same as index.html) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>🛒 ShopKaro</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li class="cart-icon">
+                    <span id="cart-count">0</span>
+                    <a href="cart.html">🛍️</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="contact-page">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>📍 Visit Us</h3>
+                    <p>Odisha, India</p>
+                    
+                    <h3>📞 Call Us</h3>
+                    <p>+91 73259 96774</p>
+                    
+                    <h3>✉️ Email</h3>
+                    <p>mudulisoumyaranjan27@gmail.com</p>
+                    
+                    <h3>⏰ Support Hours</h3>
+                    <p>24/7 Available</p>
+                </div>
+                
+                <form class="contact-form" onsubmit="submitContact(event)">
+                    <input type="text" placeholder="Your Name" id="name" required>
+                    <input type="email" placeholder="Your Email" id="email" required>
+                    <input type="text" placeholder="Subject" id="subject" required>
+                    <textarea placeholder="Your Message" id="message" rows="6" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ShopKaro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function submitContact(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            showToast('Thank you ' + name + '! Your message has been sent successfully!');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>

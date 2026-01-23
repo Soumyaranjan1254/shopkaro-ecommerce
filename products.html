@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - ShopKaro | Premium Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar same as before -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2><i class="fas fa-shopping-bag"></i> ShopKaro</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link active">Products</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="cart-icon">
+                    <span id="cart-count">0</span>
+                    <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+        <!-- products.html top mein add karo -->
+<div class="search-bar">
+    <i class="fas fa-search"></i>
+    <input type="text" id="search-input" placeholder="Search 2000+ products...">
+</div>
+
+    <!-- Premium Products Header -->
+    <section class="products-hero">
+        <div class="container">
+            <div class="products-header">
+                <div>
+                    <h1><span class="gradient-text">Premium Collection</span></h1>
+                    <p>2000+ Products | Free Shipping | COD Available</p>
+                </div>
+                <div class="filter-sort">
+                    <select id="sort-select">
+                        <option value="name">Sort by Name</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="category">Category</option>
+                    </select>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="home">Home & Kitchen</option>
+                        <option value="sports">Sports</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-main">
+        <div class="container">
+            <!-- Loading Animation -->
+            <div id="loading" class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Loading Products...</p>
+            </div>
+            
+            <div class="products-grid" id="all-products">
+                <!-- Products load here -->
+            </div>
+            
+            <!-- No Products Message -->
+            <div id="no-products" class="no-products" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No Products Found</h3>
+                <p>Try adjusting your filters</p>
+                <a href="products.html" class="cta-btn">Browse All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Footer Banner -->
+    <section class="products-footer-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h2>🔥 Hot Deals Every Day!</h2>
+                <p>Sign up for exclusive offers and discounts</p>
+                <a href="contact.html" class="cta-btn outline">Get Updates</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><i class="fas fa-heart"></i> &copy; 2026 ShopKaro. Made with Love in India</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Modal popup product details ke liye -->
+<div id="quick-view" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modal-image">
+        <h2 id="modal-title"></h2>
+        <p id="modal-price"></p>
+        <button>Add to Cart</button>
+    </div>
+</div>
+
+</body>
+</html>

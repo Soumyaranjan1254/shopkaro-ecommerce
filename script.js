@@ -1,3 +1,27 @@
+function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) {
+        menu.classList.toggle('active');
+    }
+}
+
+// Cart function ensure karo yeh EXIST karta hai
+function addToCart(productId) {
+    const product = products.find(p => p.id === productId);
+    if (!product) return; // Safety check
+    
+    const existingItem = cart.find(item => item.id === productId);
+    
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({...product, quantity: 1});
+    }
+    
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    showToast('Product added to cart!');
+}
 // Products Data
 const products = [
     {
@@ -85,9 +109,11 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 function updateCartCount() {
     const cartCount = document.getElementById('cart-count');
     if (cartCount) {
-        cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCount.textContent = totalItems;
     }
 }
+
 
 function displayProducts(productsToShow, containerId) {
     const container = document.getElementById(containerId);
@@ -278,3 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
         closeBtn.onclick = closeModal;
     }
 });
+function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('active');
+}

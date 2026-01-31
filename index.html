@@ -9,22 +9,25 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <h2>🛒 ShopKaro</h2>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="products.html" class="nav-link">Products</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li class="cart-icon">
-                    <span id="cart-count">0</span>
-                    <a href="cart.html">🛍️</a>
-                </li>
-            </ul>
+    <div class="nav-container">
+        <div class="logo">
+            <h2>🛒 ShopKaro</h2>
         </div>
-    </nav>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <ul class="nav-menu" id="mobile-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="products.html" class="nav-link">Products</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+       <div class="cart-icon">
+    <a href="cart.html" style="color:white;text-decoration:none;">
+        🛒 <span id="cart-count">0</span>
+    </a>
+</div>
+
+    </div>
+</nav>
 
     <section class="hero">
         <div class="hero-content">
